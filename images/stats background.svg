@@ -30,7 +30,8 @@
 <path fill-rule="evenodd" clip-rule="evenodd" d="M-30.9071 -88.1306C-10.5547 -136.116 40.3827 -196.764 88.8062 -198.705C147.994 -201.037 136.489 -115.71 121.196 -74.5269C103.019 -25.5222 42.0909 59.6284 -9.03991 45.8287C-59.3811 32.2446 -47.6982 -48.5936 -30.9071 -88.1306Z" stroke="white" stroke-width="5"/>
 </g>
 </g>
-<defs><clipPath id="clip0">
+<defs>
+<clipPath id="clip0">
 <rect width="3433" height="1029" fill="white"/>
 </clipPath>
 </defs>
