@@ -151,10 +151,14 @@ header{
     color: var(--primary_background);
 } 
 .stats_wrap{
+    
+  
     width: 100vw;
     padding: 5%;
+    overflow: hidden;
 }
 .stats_box{
+    position: relative;
     padding:2.5%;
     flex-direction: column;
     width: 100%;  
@@ -164,7 +168,12 @@ header{
     border-radius: 15px;
     background-size: cover;
     justify-content: space-between;
-    background-image: url(/images/stats\ background.svg);
+    overflow: hidden;
+}
+.stats_wrap svg{
+    top: 0;
+    position: absolute;
+    z-index: 0;
 }
 .stats_box>div{
     margin-bottom: 2%;
