@@ -164,7 +164,7 @@ header{
     border-radius: 15px;
     background-size: cover;
     justify-content: space-between;
-    background-image: url(/css/Frame\ 58.svg);
+    background-image: url(/images/stats\ background.svg);
 }
 .stats_box>div{
     margin-bottom: 2%;
@@ -308,7 +308,7 @@ header{
         width:100%;
         position: absolute;
         background-size: cover;
-        background-image: url(//images/jakob-owens-M_TOzf3lUcA-unsplash-removebg[266].png);
+       
     }
     .tagline{
         font-size: 2rem;
