@@ -54,6 +54,8 @@ header{
     height: 60px;
     width: 100%;
     padding: 0 5%;
+    z-index: 10;
+    transition: .3s ease-in;
     justify-content: space-between;
 }
 
@@ -98,6 +100,126 @@ header{
 .nav_link:hover::after{
     height: 3.5px;
     opacity: 1;
+}
+/*  animated menu icon code*/
+
+
+.menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.line {
+    fill: none;
+    stroke: var(--primary_background);
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+}
+
+.line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+
+.opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+}
+
+.opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+/*   sidebar for small devices */
+aside {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    padding: 100px 20px 20px 0;
+    background-color: var(--primary_background);
+}
+
+.aside_open {
+    animation: show_menu .5s 1 ease-out;
+    animation-fill-mode: forwards;
+}
+
+.aside_close {
+    animation: hide_menu .5s 1 ease-out;
+    animation-fill-mode: forwards;
+}
+
+/* animation for side_box */
+@keyframes show_menu {
+    from {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        opacity: 0;
+    }
+
+    to {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        opacity: 1;
+
+    }
+}
+
+@keyframes hide_menu {
+    from {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    to {
+        opacity: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: none;
+    }
+}
+
+.mobile_nav_bar {
+    flex-direction: column;
+    align-items: center;
+    justify-items: right;
+}
+
+.mobile_nav_bar>.navitem {
+    text-decoration: none;
+    color: var(--white_font);
+    font-size: 1.5rem;
+    margin-top: 3rem;
 }
 
 .display_warp{
@@ -151,8 +273,6 @@ header{
     color: var(--primary_background);
 } 
 .stats_wrap{
-    
-  
     width: 100vw;
     padding: 5%;
     overflow: hidden;
@@ -250,11 +370,12 @@ header{
     
   }
 @media screen and (max-width: 1200px) {
+
     .tagline_wrap{
         width: 40%;
-    }
+      }
     .tagline{
-        font-size: 3rem;
+        font-size: 4rem;
     }
     .hero_img_wrap{
         width: 60%;
@@ -262,9 +383,8 @@ header{
     
   }
 @media screen and (max-width: 1000px) {
-    .tagline_wrap{
-        width:30%;
-    }
+
+
     .stats_box{
         padding: 10% 2%;
     }
@@ -289,15 +409,24 @@ header{
     .stat_ele_des{
         font-size: 1.1rem;
     }
-    .tagline{
+    .tagline{        
         font-size: 2.5rem;
     }
     .hero_img_wrap{
-        width: 70%;
+        width: 100%;
     }
     
   }
 @media screen and (max-width: 786px) {
+    .nav_bar{
+        display: none;
+    }
+    .logo{
+        font-size: 1.2rem;
+    }
+    .display_warp{
+        padding: 0;
+    }
     .tagline_wrap{
         width:25%;
     }
@@ -309,30 +438,32 @@ header{
     }
   }
 @media screen and (max-width: 600px) {
-/*     .display_warp{
-        position: absolute;
-    } */
+
     .tagline_wrap{
-        z-index: 2;
-        width:100%;
         position: absolute;
-        background-size: cover;
-       
+        z-index: 2;
+        justify-content: flex-start;
+        width:80%;
+        padding: 0 5%;
     }
     .tagline{
+        margin-top: 50%;
         font-size: 2rem;
     }
+    .display_warp{
+        position: relative;
+    }
     .hero_img_wrap{
-        border: 2px solid red;
-        width: 100%;
-        justify-content: left;
-        align-items:flex-end;
         position: absolute;
-        display: block;    }
+        width: 100%;
+      }
     .hero_img_wrap img{
-        border: black 2px solid;
-        justify-self: left;
-        align-items: flex-end;
-        
+        width: 60%;
+    }    
+  }
+@media screen and (max-width: 400px) {
+
+    .hero_img_wrap img{
+        width: 80%;
     }    
   }
