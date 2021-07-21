@@ -771,6 +771,11 @@
     .founder_image_wrap,.founder_info{
         width: 100%;
     }
+    .founder_info{
+        border-radius: 10px;
+        text-align: justify;
+        padding: 5%;
+    }
     .founder_image_wrap{
         align-items: center;
         justify-content: center;
