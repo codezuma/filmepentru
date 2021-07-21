@@ -712,6 +712,10 @@
      .nav_bar {
          display: none;
      }
+     #menu_icon{
+         display: block;
+
+     }
 
      .logo {
          font-size: 1.2rem;
